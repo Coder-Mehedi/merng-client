@@ -15,6 +15,7 @@ import LikeButton from "../components/LikeButton";
 import { AuthContext } from "../context/auth";
 import DeleteButton from "../components/DeleteButton";
 import MyPopup from "../utils/MyPopup";
+import Loading from "../components/Loading";
 
 const SinglePost = (props) => {
 	const postId = props.match.params.postId;
@@ -37,7 +38,7 @@ const SinglePost = (props) => {
 
 	let postMarkup;
 	if (!data) {
-		postMarkup = <p>Loading Post...</p>;
+		postMarkup = <Loading />;
 	} else {
 		const {
 			id,
@@ -53,14 +54,13 @@ const SinglePost = (props) => {
 		postMarkup = (
 			<Grid>
 				<Grid.Row>
-					<Grid.Column width="2">
+					<Grid.Column width="3">
 						<Image
 							floated="right"
-							size="mini"
 							src="https://react.semantic-ui.com/images/avatar/large/molly.png"
 						/>
 					</Grid.Column>
-					<Grid.Column width="10">
+					<Grid.Column width="13">
 						<Card fluid>
 							<Card.Content>
 								<Card.Header>{username}</Card.Header>

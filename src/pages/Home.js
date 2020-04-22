@@ -6,6 +6,7 @@ import { AuthContext } from "../context/auth";
 import PostCard from "../components/PostCard";
 import PostForm from "../components/PostForm";
 import { FETCH_POSTS_QUERY } from "../utils/graphql";
+import Loading from "../components/Loading";
 
 function Home() {
 	const { user } = useContext(AuthContext);
@@ -20,14 +21,14 @@ function Home() {
 			<Grid.Row className="page-title">
 				<h1>Recent Posts</h1>
 			</Grid.Row>
-			<Grid.Row>
+			<Grid.Row centered>
 				{user && (
 					<Grid.Column>
 						<PostForm />
 					</Grid.Column>
 				)}
 				{loading && !data ? (
-					<h1>Loading posts..</h1>
+					<Loading />
 				) : (
 					<Transition.Group>
 						{data.getPosts &&

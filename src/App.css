@@ -7,3 +7,8 @@
 .ui.teal.buttons .button:focus {
 	background: #00b5ad;
 }
+
+.loading {
+	position: absolute;
+	bottom: 0;
+}
