@@ -22,7 +22,7 @@ function Home() {
 				<h1>Recent Posts</h1>
 			</Grid.Row>
 			<Grid.Row centered>
-				{user && (
+				{user && !loading && data && (
 					<Grid.Column>
 						<PostForm />
 					</Grid.Column>
